@@ -1,0 +1,80 @@
+diff --git a/.bash_aliases b/.bash_aliases
+index a5c7ce8..73eb6d9 100644
+--- a/.bash_aliases
++++ b/.bash_aliases
+@@ -4,10 +4,12 @@
+ alias grep='grep --color=auto'
+ alias fgrep='fgrep --color=auto'
+ alias egrep='egrep --color=auto'
+-alias ls='ls -AlF --color=auto'
++#alias ls='ls -AlF --color=auto'
++alias ls='ls --color=auto'
++alias ll='ls -la --color=auto'
+ alias l='ls'
+ alias v='vim'
+-alias tf='tail -f'
++alias tf='tailf'
+ if command -v ack-grep >/dev/null; then
+   alias ack='ack-grep'
+ fi
+diff --git a/.bashrc b/.bashrc
+index 18d80a2..bc5cc34 100644
+--- a/.bashrc
++++ b/.bashrc
+@@ -16,6 +16,9 @@ shopt -s histappend
+ HISTSIZE=1000
+ HISTFILESIZE=2000
+
++# This will force prompts in the screen to have color, i think
++force_color_prompt=yes
++
+ # check the window size after each command and, if necessary,
+ # update the values of LINES and COLUMNS.
+ shopt -s checkwinsize
+diff --git a/.vimrc b/.vimrc
+index 9207e35..0019047 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -9,7 +9,7 @@ set hidden
+ set title
+
+ " No annoying beep
+-"set visualbell
++set visualbell
+
+ " Turn on syntax highlighting
+ syntax on
+@@ -18,9 +18,9 @@ syntax on
+ set background=dark
+
+ " Utility features
+-set ruler
+-set number
+-set cursorline
++" set ruler
++" set number
++" set cursorline
+ set history=1000
+ set bs=2
+
+@@ -42,8 +42,8 @@ set wildmode=list:longest
+ set wildignore+=*.pyc,.hg,.git,.svn
+
+ " Mouse options
+-set mouse=a
+-set mousemodel=popup
++" set mouse=a
++" set mousemodel=popup
+
+ " Spacing and tabbing
+ set smarttab
+@@ -52,7 +52,7 @@ set tabstop=4
+ set softtabstop=4
+ set shiftwidth=4
+ set textwidth=100
+-set nowrap
++" set nowrap
+
+ " Split manipulation
+ set wmh=0
+
