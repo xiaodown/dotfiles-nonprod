@@ -1,0 +1,3 @@
+--type-add=ruby=.ru,.erb
+--type-add=css=.less,.lss
+--ignore-dir=public
